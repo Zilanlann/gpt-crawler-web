@@ -38,7 +38,7 @@ export default function CrawlerForm() {
         setIsLoading(true);
         setResponseData(null);
         try {
-            const response = await fetch("http://localhost:3000/crawl", {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/crawl`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
