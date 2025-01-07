@@ -15,4 +15,13 @@ export interface CrawlerConfig {
     maxFileSize?: number;
     /** Optional maximum number tokens to include in the output file */
     maxTokens?: number;
-} 
+}
+
+export interface CrawlerResponse {
+    success: boolean;
+    data?: {
+        url: string;
+        text: string;
+    }[];
+    error?: string;
+}

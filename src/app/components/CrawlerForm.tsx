@@ -2,7 +2,7 @@
 
 import { Button, Input, Textarea, Card, Spinner } from "@nextui-org/react";
 import { useState, useRef, useEffect } from "react";
-import type { CrawlerConfig } from "../types";
+import type { CrawlerConfig, CrawlerResponse } from "../types";
 
 export default function CrawlerForm() {
     const [formData, setFormData] = useState<CrawlerConfig>({
@@ -15,7 +15,7 @@ export default function CrawlerForm() {
         maxTokens: undefined,
         resourceExclusions: undefined,
     });
-    const [responseData, setResponseData] = useState<any>(null);
+    const [responseData, setResponseData] = useState<CrawlerResponse | null>(null);
     const [isLoading, setIsLoading] = useState(false);
     const [formHeight, setFormHeight] = useState<number>(0);
     const formRef = useRef<HTMLFormElement>(null);
